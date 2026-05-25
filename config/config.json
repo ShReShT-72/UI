@@ -1,0 +1,11 @@
+{
+  "base_url": "https://www.saucedemo.com/",
+  "timeout": 10000,
+  "browser": "chromium",
+  "headless": true,
+  "report_path": "reports",
+  "screenshot_path": "screenshots",
+  "log_path": "logs",
+  "retry": 1,
+  "workers": 2
+}
