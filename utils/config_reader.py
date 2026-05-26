@@ -51,13 +51,15 @@ class ConfigReader:
         for key, value in self.config.items():
             env_key = self._ENV_KEY_MAP.get(key, key.upper())
             env_value = os.environ.get(env_key)
-            if env_value is not None:
+            # Treat empty strings as unset to avoid accidental overrides
+            if env_value not in (None, ""):
                 self.config[key] = self._convert_value(env_value, value)
         for key in self.CREDENTIAL_KEYS:
             env_key = self._ENV_KEY_MAP.get(key, key.upper())
             env_value = os.environ.get(env_key)
-            if env_value is not None:
-                self.config[key] = env_value
+            # Only override credentials when a non-empty env value is provided
+            if env_value not in (None, ""):
+                self.config[key] = env_value.strip()
 
     def _validate(self) -> None:
         missing = [k for k in self.REQUIRED_KEYS if not self.config.get(k)]
