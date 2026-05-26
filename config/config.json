@@ -7,5 +7,10 @@
   "screenshot_path": "screenshots",
   "log_path": "logs",
   "retry": 1,
-  "workers": 2
+  "workers": 2,
+  "username": "standard_user",
+  "password": "secret_sauce",
+  "locked_user": "locked_out_user",
+  "invalid_user": "invalid_user",
+  "invalid_password": "invalid_password"
 }

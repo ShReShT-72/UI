@@ -4,5 +4,10 @@
   "headless": true,
   "timeout": 20000,
   "retry": 2,
-  "workers": 4
+  "workers": 4,
+  "username": "standard_user",
+  "password": "secret_sauce",
+  "locked_user": "locked_out_user",
+  "invalid_user": "invalid_user",
+  "invalid_password": "invalid_password"
 }
